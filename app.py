@@ -1,5 +1,41 @@
 # Blockbuster catalog
 
+import movie_catalog
+
+
+def add_movie():
+    pass
+
+
+def show_catalog(movie_catalog):
+    print("----------------------------------------------------------------------------------------------------------------------------------------------------")
+    print("Movie catalog")
+    print("----------------------------------------------------------------------------------------------------------------------------------------------------")
+    for key, value in movie_catalog.movies.items():
+        print(f"{key} - {value}")
+    print("----------------------------------------------------------------------------------------------------------------------------------------------------")
+
+    while True:
+        exit_from_catalot = input("Type 'q' to quit: ")
+
+        if exit_from_catalot.lower() == 'q':
+            break
+        else:
+            print("Invalid value")
+
+
+def search_movie():
+    pass
+
+
+def remove_movie():
+    pass
+
+
+def show_analytics():
+    pass
+
+
 def main():
 
     main_menu = {1: 'Add a movie to the catalog',
@@ -25,15 +61,19 @@ def main():
 
             if choice in main_menu.keys():
                 if choice == 1:
+                    print("Add a new movie to the catalog")
+                    new_title_movie = input("Insert the title: ")
+
+                    # add_movie()
                     pass
                 elif choice == 2:
-                    pass
+                    show_catalog(movie_catalog)
                 elif choice == 3:
-                    pass
+                    search_movie()
                 elif choice == 4:
-                    pass
+                    remove_movie()
                 elif choice == 5:
-                    pass
+                    show_analytics()
                 elif choice == 6:
                     print("Have a nice day!")
                     is_running = False
