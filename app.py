@@ -29,9 +29,6 @@ def add_movie():
 
     movie_catalog.movies.append(new_movie)
 
-    for movie in movie_catalog.movies:
-        print(movie)
-
     for film in movie_catalog.movies:
         print(film)
 
