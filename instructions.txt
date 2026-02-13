@@ -1,0 +1,41 @@
+""" Classe Libro
+
+Attributi: titolo, autore, numero di pagine, anno di pubblicazione.
+
+Funzione per stampare i dettagli del libro (__str__ o metodo normale).
+
+Gestione catalogo
+
+Conservare i libri in una lista o dizionario.
+
+Aggiungere libri con input da tastiera.
+
+Visualizzare tutti i libri.
+
+Cercare libri per autore o titolo (parziale o completo).
+
+Rimuovere un libro selezionandolo per indice o titolo.
+
+Menu interattivo
+
+Mostrare le opzioni numeriche a schermo:
+
+Aggiungi libro
+
+Mostra tutti i libri
+
+Cerca libro
+
+Rimuovi libro
+
+Esci
+
+Controllare gli input per evitare errori (numeri o stringhe non validi).
+
+Statistiche opzionali
+
+Numero totale di libri.
+
+Media delle pagine dei libri.
+
+Libro più lungo / più corto. """
