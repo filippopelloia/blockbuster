@@ -6,6 +6,18 @@ import movie_catalog
 import movie_class
 
 
+def ask_rating():
+    while True:
+        try:
+            rating = float(input("Insert the rating (1.0-10.0): "))
+            if 1.0 <= rating <= 10.0:
+                return rating
+            else:
+                print("Rating must be between 1.0 and 10.0.")
+        except ValueError:
+            print("Please insert a valid integer.")
+
+
 def add_movie():
     print("Add a new movie to the catalog")
 
@@ -14,7 +26,7 @@ def add_movie():
     genre = input("Inser the genre: ")
     director = input("Inser the director: ")
     duration = input("Inser the duration (minutes): ")
-    rating = input("Inser the rating (1.0-10.0): ")
+    rating = ask_rating()
 
     new_index = len(movie_catalog.movies) + 1
     new_movie = movie_class.Movie(
