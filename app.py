@@ -1,10 +1,34 @@
 # Blockbuster catalog
 
+# count title year genre director duration rating
+
 import movie_catalog
 
 
 def add_movie():
-    pass
+    print("Add a new movie to the catalog")
+
+    title_movie = input("Insert the title: ")
+    year_movie = input("Inser the year: ")
+    genre = input("Inser the genre: ")
+    director = input("Inser the director: ")
+    duration = input("Inser the duration (minutes): ")
+    rating = input("Inser the rating (1.0-10.0): ")
+
+    length_catalog = len(movie_catalog.movies.items())
+    movie_catalog.movies[length_catalog + 1] = {
+        "title": title_movie,
+        "year": year_movie,
+        "genre": genre,
+        "director": director,
+        "duration": duration,
+        "rating": rating
+    }
+
+    for film in movie_catalog.movies.items():
+        print(film)
+
+    # print(f"Length catalog: {length_catalog}")
 
 
 def show_catalog(movie_catalog):
@@ -61,11 +85,7 @@ def main():
 
             if choice in main_menu.keys():
                 if choice == 1:
-                    print("Add a new movie to the catalog")
-                    new_title_movie = input("Insert the title: ")
-
-                    # add_movie()
-                    pass
+                    add_movie()
                 elif choice == 2:
                     show_catalog(movie_catalog)
                 elif choice == 3:
