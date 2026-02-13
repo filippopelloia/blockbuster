@@ -3,6 +3,7 @@
 # count title year genre director duration rating
 
 import movie_catalog
+import movie_class
 
 
 def add_movie():
@@ -15,20 +16,24 @@ def add_movie():
     duration = input("Inser the duration (minutes): ")
     rating = input("Inser the rating (1.0-10.0): ")
 
-    length_catalog = len(movie_catalog.movies.items())
-    movie_catalog.movies[length_catalog + 1] = {
-        "title": title_movie,
-        "year": year_movie,
-        "genre": genre,
-        "director": director,
-        "duration": duration,
-        "rating": rating
-    }
+    new_index = len(movie_catalog.movies) + 1
+    new_movie = movie_class.Movie(
+        index=new_index,
+        title_movie=title_movie,
+        year_movie=year_movie,
+        genre=genre,
+        director=director,
+        duration=duration,
+        rating=rating
+    )
 
-    for film in movie_catalog.movies.items():
+    movie_catalog.movies.append(new_movie)
+
+    for movie in movie_catalog.movies:
+        print(movie)
+
+    for film in movie_catalog.movies:
         print(film)
-
-    # print(f"Length catalog: {length_catalog}")
 
 
 def show_catalog(movie_catalog):
